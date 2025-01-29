@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package protospackage;
+
+option go_package = "github.com/seniorramirez/go-grcp/protos";
+
+service Trainnersgrcp {
+  rpc GetData (DataRequest) returns (DataResponse);
+}
+
+message DataRequest {
+  string id = 1;
+}
+
+message DataResponse {
+  string message = 1;
+}

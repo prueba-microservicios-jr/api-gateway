@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package trainners;
+
+option go_package = "github.com/seniorramirez/go-grcp/protos";
+
+service TrainnersService {
+  rpc GetTrainners(GetTrainnersRequest) returns (GetTrainnersResponse);
+  rpc CreateTrainner(CreateTrainnerRequest) returns (CreateTrainnerResponse);
+  rpc GetTrainner(GetTrainnerRequest) returns (GetTrainnerResponse);
+  rpc UpdateTrainner(UpdateTrainnerRequest) returns (UpdateTrainnerResponse);
+  rpc DeleteTrainner(DeleteTrainnerRequest) returns (DeleteTrainnerResponse);
+}
+
+message GetTrainnersRequest {
+  int32 page = 1;
+  int32 limit = 2;
+}
+
+message GetTrainnersResponse {
+  string message = 1;
+}
+
+message CreateTrainnerRequest {
+  string name = 1;
+  string city = 2;
+  int32 age = 3;
+}
+
+message CreateTrainnerResponse {
+  string message = 1;
+}
+
+message GetTrainnerRequest {
+  uint32 id = 1;
+}
+
+message GetTrainnerResponse {
+  string message = 1;
+}
+
+message UpdateTrainnerRequest {
+  uint32 id = 1;
+  string name = 2;
+  string city = 3;
+  int32 age = 4;
+}
+
+message UpdateTrainnerResponse {
+  string message = 1;
+}
+
+message DeleteTrainnerRequest {
+  uint32 id = 1;
+}
+
+message DeleteTrainnerResponse {
+  string message = 1;
+}
